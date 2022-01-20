@@ -1,0 +1,28 @@
+## Set default image, imageTag, and imagePullPolicy. mode is used to indicate the
+##
+image:
+  repository: btfs/go-btfs
+  tag: v0.8.0-rc1
+  pullPolicy: IfNotPresent
+
+## Additional arguments to pass to ipfs binary
+extraArgs: []
+
+updateStrategy: Recreate
+
+service:
+  swarmPort: 4001
+  swarmSocket: 8081
+  apiPort: 5001
+  gatewayPort: 8080  
+
+environment:
+
+appVolumeMounts:
+  staging:
+    emptyDir: true
+    mountPath: "/export"
+  data:
+    emptyDir: true
+    mountPath: "/data/btfs"
+
