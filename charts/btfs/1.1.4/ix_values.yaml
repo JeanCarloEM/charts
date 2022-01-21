@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: btfs/go-btfs
+  tag: v1.6.0

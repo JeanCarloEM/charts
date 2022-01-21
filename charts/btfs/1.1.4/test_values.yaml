@@ -1,0 +1,22 @@
+appVolumeMounts:
+  data:
+    emptyDir: true
+    mountPath: /data/btfs
+  staging:
+    emptyDir: true
+    mountPath: /export
+dnsConfig:
+  options: []
+emptyDirVolumes: true
+environmentVariables: []
+extraArgs: []
+image:
+  pullPolicy: IfNotPresent
+  repository: btfs/go-btfs
+  tag: v0.11.0
+service:
+  apiPort: 45001  
+  gatewayPort: 48080
+  swarmPort: 44001
+  swarmSocket: 48081
+updateStrategy: Recreate
